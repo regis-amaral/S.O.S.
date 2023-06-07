@@ -35,6 +35,12 @@ No arquivo /etc/lxdm/lxdm.conf descomentar e edite a linha para ```autologin=reg
 sudo pacman -S pulseaudio pavucontrol dmidecode 
 ```
 
+### Fontes básicas
+
+```
+sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
+```
+
 ### Fim
 
 ```
