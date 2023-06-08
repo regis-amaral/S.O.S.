@@ -1,9 +1,13 @@
 ### Aplicações Desktop Básicas
 ```
-sudo pacman -S xorg xorg-setxkbmap networkmanager lxde lxdm lxinput nm-connection-editor network-manager-applet iwd
+sudo pacman -Syu
+sudo pacman -S xorg xorg-setxkbmap 
+sudo pacman -S networkmanager lxde lxinput nm-connection-editor network-manager-applet iwd
 sudo pacman -S xfce4-power-manager htop base-devel git wget pciutils usbutils 
 sudo systemctl enable NetworkManager
-sudo systemctl enable lxdm
+sudo pacman -S lightdm lightdm-gtk-greeter
+sudo systemctl enable lightdm
+sudo reboot
 ```
 
 ### Layout br-abnt2
@@ -26,9 +30,21 @@ cd ..
 rm -R google-chrome
 ```
 
-### Login Automático (opcional)
+### Login Automático (OPCIONAL)
 
-No arquivo /etc/lxdm/lxdm.conf descomentar e edite a linha para ```autologin=regis```
+No arquivo sudo nano /etc/lightdm/lightdm.conf, alterar as linhas para:
+```
+autologin-guest=false
+autologin-user=regis
+autologin-user-timeout=0
+```
+Adicionar o usuário no autologin group:
+
+```
+sudo groupadd -r autologin
+sudo gpasswd -a regis autologin
+```
+
 
 ### Áudio
 ```
