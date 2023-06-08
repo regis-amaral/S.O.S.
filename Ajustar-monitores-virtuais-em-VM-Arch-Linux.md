@@ -1,6 +1,6 @@
 Instalar 
 ```
-sudo pacman -S spice-vdagent xf86-video-qxl
+sudo pacman -S qemu-guest-agent spice-vdagent xf86-video-qxl
 ```
 
 Ajustar xrandr
