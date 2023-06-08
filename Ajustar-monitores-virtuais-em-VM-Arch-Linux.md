@@ -1,11 +1,11 @@
-Instalar 
+Em uma máquina virtual com o Arch Linux alguns passos adicionais são necessários.
+
+Instalar pacotes adicionais
 ```
-sudo pacman -S qemu-guest-agent spice-vdagent xf86-video-qxl
+sudo pacman -S qemu-guest-agent spice-vdagent xlayoutdisplay
 ```
 
-Ajustar xrandr
-
+Adicionar um gancho para atualizar a resolução das telas adicionando a linha abaixo no arquivo .config/lxsession/LXDE/autostart
+```                       
+@xlayoutdisplay -w 1
 ```
-xrandr --output Virtual-1 --primary --mode 1366x768 --pos 1920x0 --rotate normal --output Virtual-2 --mode 1920x1080 --pos 0x0 --rotate normal --output Virtual-3 --off --output Virtual-4 --off
-```
-
