@@ -3,8 +3,8 @@
 sudo pacman -Syu
 sudo pacman -S xorg xorg-setxkbmap 
 sudo pacman -S networkmanager lxde lxinput nm-connection-editor network-manager-applet iwd
-sudo pacman -S xfce4-power-manager htop base-devel git wget pciutils usbutils 
 sudo systemctl enable NetworkManager
+sudo pacman -S xfce4-power-manager htop base-devel git wget pciutils usbutils 
 sudo pacman -S lightdm lightdm-gtk-greeter
 sudo systemctl enable lightdm
 sudo reboot
