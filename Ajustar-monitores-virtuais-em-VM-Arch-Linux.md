@@ -1,6 +1,6 @@
 Em uma máquina virtual com o Arch Linux alguns passos adicionais são necessários quando se tem dois ou mais monitores.
 
-Obs.: O problema do auto ajuste e exibição de uma vm em vários monitores śo acontece no lxde, subistituí-lo pelo Lxqt ou outro ambiente desktop é uma boa alternativa.
+Obs.: O problema do auto ajuste e exibição de uma vm em vários monitores śo acontece no lxde, substituí-lo pelo Lxqt ou outro ambiente desktop é uma boa alternativa.
 
 Instalar pacotes adicionais
 ```
