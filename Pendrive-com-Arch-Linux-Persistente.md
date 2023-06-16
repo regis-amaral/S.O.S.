@@ -425,7 +425,8 @@ Para instalar um ambiente grafico siga orientações da página do Arch Linux ou
 
 ### Ambiente Gráfico LXDE
 
-Instale seguindo este passo-a-passo: [Arch Linux Install LXDE Desktop](https://github.com/regis-amaral/S.O.S./wiki/Arch-Linux---Install-LXDE-Desktop)
+Instale seguindo este passo-a-passo: [Arch Linux Install LXDE Desktop](https://github.com/regis-amaral/S.O.S./blob/main/Arch-Linux---Install-LXDE-Desktop.md)
+
 
 ### Resultado após instalação do ambiente gráfico e algumas personalizações
 
