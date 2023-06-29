@@ -2,7 +2,7 @@ Este passo-a-passo é uma adaptação e complemento ao tutorial criado por Chris
 
 Créditos: [Arch Linux USB](https://mags.zone/help/arch-usb.html)
 
-Testado em 02/06/2023
+Testado e atualizado em 29/06/2023
 
 ***
 
@@ -137,7 +137,7 @@ Substitua archlinux pelo nome que quer usar para o PC.
 Edite /etc/hosts para conter apenas o seguinte conteúdo:
 
 ```
-vim /etc/hosts
+nano /etc/hosts
 ```
 ```
 127.0.0.1  localhost
@@ -233,11 +233,14 @@ RouteMetric=20
 systemctl enable systemd-resolved.service
 ```
 
-NOTA: este comando deve ser executado fora do ambiente chroot. Crie um link para /run/systmed/resolve/stub-resolv.conf :
+NOTA: este comando deve ser executado fora do ambiente chroot, logo vou utilizar o exit para sair, executar o comando e voltar para o chroot logo em seguida. Crie um link para /run/systmed/resolve/stub-resolv.conf :
 
 ```
+exit
 ln -sf /run/systemd/resolve/stub-resolv.conf /mnt/usb/etc/resolv.conf
+arch-chroot /mnt/usb
 ```
+
 
 ### Habilitar timesyncd:
 
@@ -361,27 +364,6 @@ Gere uma nova configuração do GRUB:
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-### Nomodeset (opcional)
-
-Crie um item de menu GRUB com o parâmetro de kernel nomodeset . Use o vim para copiar a entrada de menu padrão de /boot/grub/grub.cfg para /etc/grub.d/40_custom e adicione nomodeset à sua linha de comando do kernel:
-
-```
-vim /etc/grub.d/40_custom
-```
-```
-...
-menuentry 'Arch Linux ... (nomodeset)' ...
-...
-linux /vmlinuz-linux ... nomodeset
-...
-```
-
-Gere uma nova configuração do GRUB:
-
-```
-grub-mkconfig -o /boot/grub/grub.cfg
-```
-
 ### Microcódigo (opcional)
 Habilitar atualizações de microcódigo. Instale amd-ucode e intel-ucode :
 
@@ -413,6 +395,11 @@ Assegure-se de que as principais interfaces ethernet e wi-fi sejam sempre denomi
 
 ```
 ln -s /dev/null /etc/udev/rules.d/80-net-setup-link.rules
+```
+### Aplicativos adicionais
+
+```
+pacman -S htop base-devel git wget pciutils usbutils 
 ```
 
 ### FIM!
