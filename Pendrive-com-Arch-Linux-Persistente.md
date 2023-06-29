@@ -16,9 +16,7 @@ Serviços básicos todos gerenciados pelo systemd.
 ```
 loadkeys br-abtn2
 ```
-### Instalar sistema básico
-
-Determine o nome do dispositivo USB de destino:
+### Determine o nome do dispositivo USB de destino
 
 ```
 lsblk
