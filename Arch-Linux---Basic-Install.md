@@ -44,6 +44,8 @@ mkfs.btrfs -L sistema /dev/sdX1
 
 ```
 mount -o compress=zstd /dev/sdX2 /mnt/
+mkdir /mnt/boot
+mount /dev/sdX1 /mnt/boot
 ```
 
 ### Install Essential Pack
