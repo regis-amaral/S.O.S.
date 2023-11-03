@@ -35,9 +35,21 @@ Utilize o fdisk para criar as partições necessárias.
 fdisk /dev/sdX
 ```
 
-### Formatar o Disco como uma partição do tipo BTRFS
+### Formatar partições
+
+Partição de Boot 
 ```
-mkfs.btrfs -L sistema /dev/sdX1
+mkfs.fat -F 32 /dev/efi_system_partition
+```
+
+Partição Linux do tipo BTRFS
+```
+mkfs.btrfs -L sistema /dev/linux_partition
+```
+
+Partição Swap
+```
+mkswap /dev/swap_partition
 ```
 
 ### Montar o Disco
