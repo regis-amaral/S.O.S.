@@ -55,9 +55,12 @@ mkswap /dev/swap_partition
 ### Montar o Disco
 
 ```
-mount -o compress=zstd /dev/sdX2 /mnt/
+mount -o compress=zstd /dev/linux_partition /mnt/
 mkdir /mnt/boot
-mount /dev/sdX1 /mnt/boot
+
+mount --mkdir /dev/efi_system_partition /mnt/boot
+
+swapon /dev/swap_partition
 ```
 
 ### Install Essential Pack
