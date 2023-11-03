@@ -56,7 +56,6 @@ mkswap /dev/swap_partition
 
 ```
 mount -o compress=zstd /dev/linux_partition /mnt/
-mkdir /mnt/boot
 
 mount --mkdir /dev/efi_system_partition /mnt/boot
 
