@@ -96,8 +96,6 @@ locale-gen
 echo LANG=pt_BR.UTF-8 > /etc/locale.conf
 export LANG=pt_BR.UTF-8
 echo KEYMAP=br-abnt2 > /etc/vconsole.conf
-localectl set-keymap --no-convert br-abnt2
-
 ```
 
 ### Configurar o nome da máquina
@@ -152,7 +150,7 @@ systemctl enable iwd.service
 ### Crie um arquivo de configuração networkd com o seguinte conteúdo para conexões sem fio:
 
 ```
-vim /etc/systemd/network/20-wifi.network
+nano /etc/systemd/network/20-wifi.network
 ```
 ```
 [Match]
