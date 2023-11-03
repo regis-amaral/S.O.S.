@@ -29,7 +29,7 @@ timedatectl
 ### Particionar o Disco
 
 Descubra o disco a ser utilizado usando o comando ```fdisk -l``` e o utilize no lugar de /dev/sdX.
-Utilize o fdisk para criar as partiçẽos necessárias.
+Utilize o fdisk para criar as partições necessárias.
 
 ```
 fdisk /dev/sdX
