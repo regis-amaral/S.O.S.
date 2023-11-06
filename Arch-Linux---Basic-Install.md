@@ -210,7 +210,7 @@ Execute ```EDITOR=nano visudo``` e descomente a linha #%wheel ALL=(ALL:ALL) ALL
 exit
 umount /mnt/boot
 umount /mnt
-shutdown now
+shutdown -r now
 ```
 
 ### Resultado após instalação básica (+ neofetch)
