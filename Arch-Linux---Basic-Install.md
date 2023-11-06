@@ -208,6 +208,7 @@ Execute ```EDITOR=nano visudo``` e descomente a linha #%wheel ALL=(ALL:ALL) ALL
 ### Finalizar
 ```
 exit
+umount /mnt/boot
 umount /mnt
 shutdown now
 ```
