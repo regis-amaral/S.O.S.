@@ -15,8 +15,17 @@ ou
 iwctl --passphrase SENHA station wlan0 connect-hidden NomeDaRede
 ```
 
-### Atualizar a lista de pacotes
+#### Sem conexão? Tente o seguinte...
 ```
+systemd-resolve --set-dns=1.1.1.1 --interface wlan0
+ip link set wlan0 down
+ip link set wlan0 up
+```
+
+### Atualizar chaves e lista de pacotes
+```
+pacman-key init
+pacman -S archlinux-keyring
 pacman -Syy
 ```
 
@@ -65,7 +74,7 @@ swapon /dev/swap_partition
 ### Install Essential Pack
 
 ```
-pacstrap -K /mnt linux linux-firmware base vim nano
+pacstrap -K /mnt linux linux-firmware base vim nano dhcpcd net-tools
 ```
 
 ### FSTAB
@@ -138,6 +147,7 @@ RouteMetric=10
 
 ```
 systemctl enable systemd-networkd.service
+systemctl enable dhcpcd
 ```
 
 ### Instale e ative o iwd para permitir o controle do usuário sobre as interfaces sem fio:
@@ -192,7 +202,7 @@ passwd
 ### GRUB
 ```
 pacman -S grub efibootmgr
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB --modules="tpm" --disable-shim-lock
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
@@ -216,3 +226,19 @@ shutdown -r now
 ### Resultado após instalação básica (+ neofetch)
 
 ![Resultado após instalação básica](https://github.com/regis-amaral/S.O.S./blob/efb7128ced461300c447f19c2ed651771496e4d9/readme/Screenshot_ArchLinuxBasic_2023-06-03_17%3A21%3A11.png)
+
+
+### [Opcional] Instalando gerenciador de janela Openbox e Gerenciador de login LightDM
+```
+pacman -S openbox ttf-freefont ttf-dejavu ttf-liberation lightdm lightdm-gtk-greeter
+systemctl enable lightdm
+```
+
+### [Adicionais]
+
+```
+pacman -S --needed libpulse pavucontrol-qt networkmanager
+systemctl enable NetworkManager
+```
+
+
