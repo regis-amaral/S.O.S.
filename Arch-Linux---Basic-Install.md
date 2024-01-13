@@ -25,7 +25,7 @@ ip link set wlan0 up
 ### Atualizar chaves e lista de pacotes
 ```
 pacman-key --init
-pacman -S archlinux-keyring
+pacman -Sy archlinux-keyring
 pacman -Syy
 ```
 
